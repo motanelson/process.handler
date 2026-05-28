@@ -38,3 +38,15 @@ def reports(nods):
             break
         n1=n1.nexts
 
+
+
+n=["8086","80186","80286","80386","80486"]
+
+
+
+
+
+
+ns=creates(n)
+reports(ns)
+
