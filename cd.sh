@@ -29,7 +29,7 @@ bcc -x -i -L -Md date.c -o date.com
 bcc -x -i -L -Md tree.c -o tree.com
 cp *.c32 CD_root/isolinux/
 cp *.com CD_root/isolinux/
-ls CD_root/isolinux > CD_root/isolinux/tree.txt
-tree CD_root/ > CD_root/isolinux/ls.txt
+ls CD_root/isolinux > CD_root/isolinux/ls.txt
+tree CD_root/ > CD_root/isolinux/tree.txt
 genisoimage -o myos.iso -input-charset utf-8 -b isolinux/isolinux.bin -no-emul-boot -boot-load-size 4  -boot-info-table ./CD_root 
 
