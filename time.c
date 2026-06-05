@@ -162,15 +162,15 @@ _getchar:
 _times:
     mov ah,*2
     int $1a
-    shr ch,*4
-    and ch,0xf
-    add ch,*0x30
     mov dl,ch
+    shr dl,*4
+    and dl,*0xf
+    add dl,*0x30
     mov ah,*02
     int *0x21
     mov ah,*2
     int $1a
-    and ch,0xf
+    and ch,*0xf
     add ch,*0x30
     mov dl,ch
     mov ah,*02
@@ -183,14 +183,14 @@ _times:
     mov ah,*2
     int $1a
     shr cl,*4
-    and cl,0xf
+    and cl,*0xf
     add cl,*0x30
     mov dl,cl
     mov ah,*02
     int *0x21
     mov ah,*2
     int $1a
-    and cl,0xf
+    and cl,*0xf
     add cl,*0x30
     mov dl,cl
     mov ah,*02
@@ -203,14 +203,14 @@ _times:
     mov ah,*2
     int $1a
     shr dh,*4
-    and dh,0xf
+    and dh,*0xf
     add dh,*0x30
     mov dl,dh
     mov ah,*02
     int *0x21
     mov ah,*2
     int $1a
-    and dh,0xf
+    and dh,*0xf
     add dh,*0x30
     mov dl,dh
     mov ah,*02
