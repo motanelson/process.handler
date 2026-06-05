@@ -12,7 +12,6 @@ cp *.elf CD_root/isolinux/
 cp *.jpg CD_root/isolinux/
 cp *.menu CD_root/isolinux/
 cp *.txt CD_root/isolinux/
-ls CD_root/isolinux > CD_root/isolinux/ls.txt
 bcc -c -Md libdos.c -o libdos.a
 bcc -x -i -L -Md intro.c -o intro.com
 bcc -x -i -L -Md cat.c -o cat.com
@@ -26,8 +25,9 @@ bcc -x -i -L -Md sleep.c -o sleep.com
 bcc -x -i -L -Md color.c -o color.com
 bcc -x -i -L -Md wait.c -o wait.com
 bcc -x -i -L -Md time.c -o time.com
-
+bcc -x -i -L -Md date.c -o date.com
 cp *.c32 CD_root/isolinux/
 cp *.com CD_root/isolinux/
+ls CD_root/isolinux > CD_root/isolinux/ls.txt
 genisoimage -o myos.iso -input-charset utf-8 -b isolinux/isolinux.bin -no-emul-boot -boot-load-size 4  -boot-info-table ./CD_root 
 
