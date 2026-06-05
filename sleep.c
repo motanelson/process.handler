@@ -171,35 +171,33 @@ _sleep:
     mov si,sp
     add si,*0x2
     mov ax,[si]
+    mov cx,*0
+    mov dx,*0
+    mov bx,*18
+    clc
+    mul bx
     push ax
-    mov ah,*2
+    mov ah,*0
     int $1a
     pop ax
-    mov dl,dh
-    mov dh,*0
+    
     add ax,dx 
-    cmp ax,*59
-    jb _sleep1
-    sub ax,*60
-    jmp _sleep1
 _sleep1:
     push ax
-    mov ah,*2
+    mov ah,*0
     int $1a
     pop ax
-    mov dl,dh
-    mov dh,*0x0
+    
     cmp dx,ax
-    ja _sleep1
+    jg _sleep1
 _sleep2:
     push ax
-    mov ah,*0x2
+    mov ah,*0
     int $1a
     pop ax
-    mov dl,dh
-    mov dh,*0
+    
     cmp dx,ax
-    jb _sleep2
+    jl _sleep2
     
     
     ret
