@@ -28,6 +28,7 @@ bcc -x -i -L -Md time.c -o time.com
 bcc -x -i -L -Md date.c -o date.com
 bcc -x -i -L -Md tree.c -o tree.com
 bcc -x -i -L -Md label.c -o label.com
+bcc -x -i -L -Md more.c -o more.com
 cp *.c32 CD_root/isolinux/
 cp *.com CD_root/isolinux/
 ls CD_root/isolinux > CD_root/isolinux/ls.txt
